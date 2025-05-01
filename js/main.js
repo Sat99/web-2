@@ -26,7 +26,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add active class to current navigation item
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         }
@@ -34,4 +36,4 @@ function setActiveNavItem() {
 }
 
 // Call the function when the page loads
-window.addEventListener('load', setActiveNavItem); 
+document.addEventListener('DOMContentLoaded', setActiveNavItem); 
